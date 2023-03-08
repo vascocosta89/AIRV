@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AIRV.iml" filepath="$PROJECT_DIR$/.idea/AIRV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/namingserver/namingserver.iml" filepath="$PROJECT_DIR$/namingserver/namingserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/airv/searchEngine.iml" filepath="$PROJECT_DIR$/airv/searchEngine.iml" />
+    </modules>
+  </component>
+</project>
