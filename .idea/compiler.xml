@@ -7,22 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="searchEngine" />
-        <module name="gateway" />
         <module name="namingserver" />
+        <module name="searchengine" />
+        <module name="configserver" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="configserver" target="17" />
       <module name="gateway" target="17" />
       <module name="namingserver" target="17" />
+      <module name="searchengine" target="17" />
       <module name="searchEngine" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="configserver" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="namingserver" options="-parameters" />
       <module name="searchEngine" options="-parameters" />
+      <module name="searchengine" options="-parameters" />
     </option>
   </component>
 </project>
