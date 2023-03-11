@@ -1,5 +1,7 @@
 # AIRV
 
-Simple project to query data from a third party API, store it, proccess it and make it available to a Front-end client.
+Simple project to query a third party API, store some data locally, proccess it and make it available to a Front-end client.
 
-Work-in-progress.
+The aim is to experiment with acquired skills.
+
+Work-in-progress. Be patient. :)
