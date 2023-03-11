@@ -1,6 +1,5 @@
 package com.ota.airv.airv.model.location;
 
-import com.amadeus.resources.Location;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,7 +22,7 @@ public class LocationEntity {
     private String detailedName;
     private String timeZoneOffset;
     private String iataCode;
-//    private Location.GeoCode geoCode;
+//    private Location.GeoCode geoCode; //todo implement local models
 //    private Location.Address address;
 //    private Location.Distance distance;
 //    private Location.Analytics analytics;
