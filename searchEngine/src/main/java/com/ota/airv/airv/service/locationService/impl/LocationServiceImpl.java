@@ -10,7 +10,6 @@ import com.ota.airv.airv.service.locationService.LocationService;
 import com.ota.airv.airv.utils.AuthorizationAmadeus;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -18,19 +17,13 @@ import java.util.Objects;
 @Service
 public class LocationServiceImpl implements LocationService {
 
-    @Value("${application.amadeus.key}")
-    private String amadeusKey;
-
-    @Value("${application.amadeus.secret}")
-    private String amadeusSecret;
-
     @Autowired
     AuthorizationAmadeus auth;
 
-    Amadeus client;
-
     @Autowired
     LocationRepository repository;
+
+    private Amadeus client;
 
     ModelMapper modelMapper = new ModelMapper();
 
@@ -76,7 +69,7 @@ public class LocationServiceImpl implements LocationService {
 
     private void verifyClient(){
         if(Objects.isNull(client)){
-            client = auth.getAmadeus(amadeusKey,amadeusSecret);
+            client = auth.getAmadeus();
         }
     }
 }

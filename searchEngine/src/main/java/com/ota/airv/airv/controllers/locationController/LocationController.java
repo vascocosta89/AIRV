@@ -1,7 +1,5 @@
 package com.ota.airv.airv.controllers.locationController;
 
-import com.amadeus.resources.Location;
-import com.amadeus.exceptions.ResponseException;
 import com.ota.airv.airv.service.locationService.LocationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
