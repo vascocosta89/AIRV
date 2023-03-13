@@ -1,5 +1,6 @@
 package com.ota.airv.airv.controllers.locationController;
 
+import com.ota.airv.airv.model.location.rest.LocationRest;
 import com.ota.airv.airv.service.locationService.LocationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class LocationController {
     LocationService service;
 
     @GetMapping(path = "/{cityCode}")
-    public String getLocations(@PathVariable String cityCode) {
+    public LocationRest getLocations(@PathVariable String cityCode) {
         return service.getLocations(cityCode);
     }
 

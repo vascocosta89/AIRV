@@ -5,6 +5,7 @@ import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.Location;
 import com.ota.airv.airv.exceptions.location.LocationNotFoundException;
 import com.ota.airv.airv.model.location.LocationEntity;
+import com.ota.airv.airv.model.location.rest.LocationRest;
 import com.ota.airv.airv.repositories.location.LocationRepository;
 import com.ota.airv.airv.service.locationService.LocationService;
 import com.ota.airv.airv.utils.AuthorizationAmadeus;
@@ -28,13 +29,13 @@ public class LocationServiceImpl implements LocationService {
     ModelMapper modelMapper = new ModelMapper();
 
     @Override
-    public String getLocations(String cityCode)  {
+    public LocationRest getLocations(String cityCode)  {
         this.verifyClient();
 
         LocationEntity locationEntity = repository.findByIataCode(cityCode);
 
         if(!Objects.isNull(locationEntity)){
-            return locationEntity.toString();
+            return modelMapper.map(locationEntity,LocationRest.class);
         }
 
         // Get a specific city or airport based on its id
@@ -50,7 +51,9 @@ public class LocationServiceImpl implements LocationService {
         this.statusCodeValidation(location);
         this.saveToDatabase(location);
 
-        return location.toString();
+        LocationRest returnObject = modelMapper.map(location,LocationRest.class);
+
+        return returnObject;
     }
 
     private void saveToDatabase(Location location) {
